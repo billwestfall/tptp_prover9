@@ -8,7 +8,8 @@
 #end
 
 Dir.glob('/home/pi/Documents/tptp/TPTP-v6.4.0/Problems/*/*.p').each do |fileName|
-  "'/home/pi/Documents/LADR-2009-11A/bin/tptp_to_ladr' < fileName | '/home/pi/Documents/LADR-2009-11A/bin/prover9' > /home/pi/Documents/tptp/TPTP-v6.4.0/Problems/fileName.out"
+  "'/home/pi/Documents/LADR-2009-11A/bin/tptp_to_ladr' < fileName > /home/pi/Documents/tptp/TPTP-v6.4.0/Problems/fileName.in"
+  "'/home/pi/Documents/LADR-2009-11A/bin/prover9' -f /home/pi/Documents/tptp/TPTP-v6.4.0/Problems/fileName.in > /home/pi/Documents/tptp/TPTP-v6.4.0/Problems/fileName.out"
   print "complete\n"
   sleep 10
 end
