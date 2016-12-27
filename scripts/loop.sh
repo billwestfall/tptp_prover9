@@ -1,6 +1,6 @@
 #!/bin/sh
 
-now="date +'%s'"
+now=`date +'%s'`
 dir='/home/pi/Documents/tptp/TPTP-v6.4.0/Problems/ALL'
 file=`/bin/ls -R -1 "$dir" | sort --random-sort | head -1`
 path=`readlink --canonicalize "$dir/$file"` # Converts to full path
