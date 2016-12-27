@@ -6,7 +6,6 @@ path=`readlink --canonicalize "$dir/$file"` # Converts to full path
 sleep 3
 echo "The randomly-selected file is: $path"
 cd "/home/pi/Documents/tptp/TPTP-v6.4.0/Problems/ALL"
-ls
 sleep 3
 "'/home/pi/Documents/LADR-2009-11A/bin/tptp_to_ladr' < /home/pi/Documents/tptp/TPTP-v6.4.0/Problems/ALL/$file > /home/pi/Documents/tptp/TPTP-v6.4.0/Problems/ALL/$file.in"
 ls /home/pi/Documents/tptp/TPTP-v6.4.0/Problems/ALL/*.in
