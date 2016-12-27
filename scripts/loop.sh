@@ -11,7 +11,7 @@ cd "/home/pi/Documents/tptp/TPTP-v6.4.0"
 cp $path .
 ls
 sleep 3
-"'/home/pi/Documents/LADR-2009-11A/bin/tptp_to_ladr' < $file > /home/pi/Documents/tptp/TPTP-v6.4.0/Infiles/$now.in"
+"'/home/pi/Documents/LADR-2009-11A/bin/tptp_to_ladr' < /home/pi/Documents/tptp/TPTP-v6.4.0/$file > /home/pi/Documents/tptp/TPTP-v6.4.0/Infiles/$now.in"
 ls /home/pi/Documents/tptp/TPTP-v6.4.0/Infiles
 sleep 3
 "'/home/pi/Documents/LADR-2009-11A/bin/prover9' -f /home/pi/Documents/tptp/TPTP-v6.4.0/Infiles/$now.in > /home/pi/Documents/tptp/TPTP-v6.4.0/Outfiles/$now.out"
