@@ -1,7 +1,7 @@
 #!/bin/sh
 
 n=1
-while [ $n -le 500 ]
+while [ $n -le 23000 ]
 do
   dir='/home/pi/Documents/tptp/TPTP-v6.4.0/Problems/ALL'
   file=`/bin/ls -R -1 "$dir" | sort --random-sort | head -1`
