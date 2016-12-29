@@ -11,11 +11,11 @@ do
   cd "/home/pi/Documents/tptp/TPTP-v6.4.0/Problems/ALL"
   sleep 3
   `'/home/pi/Documents/LADR-2009-11A/bin/tptp_to_ladr' < /home/pi/Documents/tptp/TPTP-v6.4.0/Problems/ALL/$file > /home/pi/Documents/tptp/TPTP-v6.4.0/Problems/ALL/$file.in & sleep 900 ; kill $!`
-  ls /home/pi/Documents/tptp/TPTP-v6.4.0/Problems/ALL/*.in
+  ls /home/pi/Documents/tptp/TPTP-v6.4.0/Problems/ALL/*.in | wc -l
   sleep 3
   `'/home/pi/Documents/LADR-2009-11A/bin/prover9' -f /home/pi/Documents/tptp/TPTP-v6.4.0/Problems/ALL/$file.in > /home/pi/Documents/tptp/TPTP-v6.4.0/Outfiles/$file.out & sleep 900 ; kill $!`
-  ls /home/pi/Documents/tptp/TPTP-v6.4.0/Problems/ALL/*.in
-  ls /home/pi/Documents/tptp/TPTP-v6.4.0/Outfiles
+  ls /home/pi/Documents/tptp/TPTP-v6.4.0/Problems/ALL/*.in | wc -l
+  ls /home/pi/Documents/tptp/TPTP-v6.4.0/Outfiles | wc -l
   sleep 900
 n=$(( n+1 ))
 done
