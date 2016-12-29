@@ -10,10 +10,11 @@ do
   echo "The randomly-selected file is: $path"
   cd "/home/pi/Documents/tptp/TPTP-v6.4.0/Problems/ALL"
   sleep 3
-  `timeout -k 15m '/home/pi/Documents/LADR-2009-11A/bin/tptp_to_ladr' < /home/pi/Documents/tptp/TPTP-v6.4.0/Problems/ALL/$file > /home/pi/Documents/tptp/TPTP-v6.4.0/Problems/ALL/$file.in`
+  `'/home/pi/Documents/LADR-2009-11A/bin/tptp_to_ladr' < /home/pi/Documents/tptp/TPTP-v6.4.0/Problems/ALL/$file > /home/pi/Documents/tptp/TPTP-v6.4.0/Problems/ALL/$file.in` & sleep 900 ; kill $!
   ls /home/pi/Documents/tptp/TPTP-v6.4.0/Problems/ALL/*.in
   sleep 3
-  `timeout -k 15m '/home/pi/Documents/LADR-2009-11A/bin/prover9' -f /home/pi/Documents/tptp/TPTP-v6.4.0/Problems/ALL/$file.in > /home/pi/Documents/tptp/TPTP-v6.4.0/Outfiles/$file.out`
+  `'/home/pi/Documents/LADR-2009-11A/bin/prover9' -f /home/pi/Documents/tptp/TPTP-v6.4.0/Problems/ALL/$file.in > /home/pi/Documents/tptp/TPTP-v6.4.0/Outfiles/$file.out` & sleep 900 ; kill $!
+  ls /home/pi/Documents/tptp/TPTP-v6.4.0/Problems/ALL/*.in
   ls /home/pi/Documents/tptp/TPTP-v6.4.0/Outfiles
   sleep 900
 n=$(( n+1 ))
